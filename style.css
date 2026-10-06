@@ -1,0 +1,89 @@
+
+/* Main application background */
+.stApp {
+    background: linear-gradient(135deg, #f0fdf4, #f8fafc);
+    color: #18352b;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Main title and headings */
+h1 {
+    color: #087f5b !important;
+    font-weight: 800 !important;
+}
+
+h2, h3 {
+    color: #126b50 !important;
+    font-weight: 700 !important;
+}
+
+/* Buttons */
+.stButton > button,
+.stDownloadButton > button {
+    background: #07845e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.55rem 1rem;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    background: #056747;
+    color: white;
+    border: none;
+    transform: translateY(-1px);
+}
+
+/* Dashboard metric cards */
+[data-testid="stMetric"] {
+    background: white;
+    border: 1px solid #d5eee1;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 3px 12px rgba(0, 80, 50, 0.06);
+}
+
+/* Input fields and dropdowns */
+.stTextInput input,
+.stSelectbox [data-baseweb="select"] {
+    border-radius: 9px;
+}
+
+/* Uploaded images */
+[data-testid="stImage"] img {
+    border-radius: 12px;
+}
+
+/* Dividers */
+hr {
+    border-color: #cde8d9;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background: #e5f7ed;
+}
+
+/* Success and information messages */
+[data-testid="stAlert"] {
+    border-radius: 10px;
+}
+
+/* Footer text */
+.stCaption {
+    color: #547466;
+}
+
+/* Responsive spacing for smaller screens */
+@media (max-width: 768px) {
+    .block-container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem !important;
+    }
+}

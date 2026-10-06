@@ -6,6 +6,7 @@ import sqlite3
 from datetime import datetime
 from PIL import Image
 from io import BytesIO
+from pathlib import Path
 
 # =========================
 # PAGE CONFIGURATION
@@ -15,6 +16,19 @@ st.set_page_config(
     page_icon="♻️",
     layout="wide"
 )
+
+
+# =========================
+# CUSTOM CSS STYLING
+# =========================
+css_file = Path(__file__).parent / "style.css"
+
+if css_file.exists():
+    css = css_file.read_text(encoding="utf-8")
+    st.markdown(
+        f"<style>{css}</style>",
+        unsafe_allow_html=True
+    )
 
 DB_NAME = "ewaste.db"
 
