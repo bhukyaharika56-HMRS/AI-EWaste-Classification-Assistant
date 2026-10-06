@@ -1,88 +1,162 @@
+/* AI E-Waste Assistant — soft sage and teal theme */
 
-/* Main application background */
+/* Muted background: comfortable contrast without bright white */
 .stApp {
-    background: linear-gradient(135deg, #f0fdf4, #f8fafc);
-    color: #18352b;
+    background: linear-gradient(135deg, #d4e3d8 0%, #cbdcdd 55%, #d8d5e4 100%);
+    color: #243b38;
     font-family: "Segoe UI", sans-serif;
 }
 
-/* Main title and headings */
-h1 {
-    color: #087f5b !important;
-    font-weight: 800 !important;
+/* Main content surface */
+[data-testid="stMainBlockContainer"] {
+    background: rgba(222, 235, 228, 0.94);
+    border: 1px solid #b5ccc1;
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 6px 20px rgba(34, 63, 55, 0.08);
 }
 
+/* Headings */
+h1 {
+    color: #185b4d !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.4px;
+}
 h2, h3 {
-    color: #126b50 !important;
-    font-weight: 700 !important;
+    color: #245f54 !important;
+    font-weight: 750 !important;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #bfd5c7 0%, #bdd3d1 60%, #ccc8dc 100%);
+    border-right: 1px solid #a5beb3;
+}
+[data-testid="stSidebar"] * {
+    color: #243f39;
 }
 
 /* Buttons */
 .stButton > button,
-.stDownloadButton > button {
-    background: #07845e;
-    color: white;
-    border: none;
+.stDownloadButton > button,
+.stFormSubmitButton > button {
+    background: #286d5b;
+    color: #ffffff !important;
+    border: 1px solid #245f50;
     border-radius: 10px;
-    padding: 0.55rem 1rem;
-    font-weight: 600;
-    transition: 0.2s ease;
+    padding: 0.58rem 1rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
 }
-
 .stButton > button:hover,
-.stDownloadButton > button:hover {
-    background: #056747;
-    color: white;
-    border: none;
+.stDownloadButton > button:hover,
+.stFormSubmitButton > button:hover {
+    background: #1c5548;
+    border-color: #1c5548;
     transform: translateY(-1px);
 }
 
-/* Dashboard metric cards */
+/* Dashboard metric cards: darker muted sage, readable labels */
 [data-testid="stMetric"] {
-    background: white;
-    border: 1px solid #d5eee1;
-    border-radius: 14px;
+    background: #c7ddd1;
+    border: 1px solid #a8c5b7;
+    border-radius: 15px;
     padding: 18px;
-    box-shadow: 0 3px 12px rgba(0, 80, 50, 0.06);
+    box-shadow: 0 4px 12px rgba(37, 73, 61, 0.07);
+}
+[data-testid="stMetricLabel"],
+[data-testid="stMetricLabel"] * {
+    color: #294c43 !important;
+    font-weight: 650 !important;
+}
+[data-testid="stMetricValue"],
+[data-testid="stMetricValue"] * {
+    color: #174f43 !important;
+    font-weight: 800 !important;
 }
 
-/* Input fields and dropdowns */
+/* Text inputs, dropdowns and text areas */
 .stTextInput input,
-.stSelectbox [data-baseweb="select"] {
-    border-radius: 9px;
+.stTextArea textarea,
+.stSelectbox [data-baseweb="select"],
+[data-baseweb="input"] {
+    background: #d3e2dc !important;
+    color: #203e38 !important;
+    border: 1px solid #a8c5b8 !important;
+    border-radius: 9px !important;
+}
+.stTextInput input::placeholder,
+.stTextArea textarea::placeholder {
+    color: #617b73 !important;
+}
+
+/* File uploader */
+[data-testid="stFileUploader"] {
+    background: #d0e1d8;
+    border: 1px dashed #829f91;
+    border-radius: 14px;
+    padding: 12px;
 }
 
 /* Uploaded images */
 [data-testid="stImage"] img {
     border-radius: 12px;
+    border: 1px solid #a8c5b8;
 }
 
-/* Dividers */
-hr {
-    border-color: #cde8d9;
+/* Chat messages */
+[data-testid="stChatMessage"] {
+    background: #d0e1d8;
+    border: 1px solid #b0cabe;
+    border-radius: 12px;
+    padding: 10px;
 }
 
-/* Sidebar */
-[data-testid="stSidebar"] {
-    background: #e5f7ed;
+/* Forms */
+[data-testid="stForm"] {
+    background: #d3e2dc;
+    border: 1px solid #b0cabe;
+    border-radius: 14px;
+    padding: 14px;
 }
 
-/* Success and information messages */
+/* Data table and dataframe container */
+[data-testid="stDataFrame"] {
+    background: #d0e0d8;
+    border: 1px solid #a8c5b8;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Alerts */
 [data-testid="stAlert"] {
+    background: #c9ded6;
+    border: 1px solid #a4c6b8;
     border-radius: 10px;
+    color: #29483f;
 }
 
-/* Footer text */
-.stCaption {
-    color: #547466;
+/* Dividers and captions */
+hr {
+    border-color: #a8c2b6 !important;
+}
+.stCaption,
+[data-testid="stCaptionContainer"] {
+    color: #526d64 !important;
 }
 
-/* Responsive spacing for smaller screens */
+/* Links */
+a {
+    color: #205f50 !important;
+    font-weight: 600;
+}
+
+/* Mobile spacing */
 @media (max-width: 768px) {
-    .block-container {
+    [data-testid="stMainBlockContainer"] {
         padding: 1rem;
+        border-radius: 14px;
     }
-
     h1 {
         font-size: 1.8rem !important;
     }
